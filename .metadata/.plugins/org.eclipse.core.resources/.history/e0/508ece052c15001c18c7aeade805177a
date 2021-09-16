@@ -1,0 +1,13 @@
+package com.Taazaa.Controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.Taazaa.Service.EmployeeService;
+
+public class EmployeeController {
+	
+	
+	@Autowired
+	private EmployeeService eService; 
+
+}

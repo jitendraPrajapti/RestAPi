@@ -1,0 +1,13 @@
+package com.rest.service;
+
+import com.rest.model.Department;
+
+public class DepartmentServiceImpl implements DepartmentService {
+
+	@Override
+	public Integer insert(Department dpt) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

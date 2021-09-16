@@ -1,0 +1,13 @@
+package com.Taazaa.model;
+
+public class Department {
+
+	 public Integer d_id;
+	 public String Area;
+	 public  String state;
+	 public long PinCode;
+	 
+	
+	
+	
+}

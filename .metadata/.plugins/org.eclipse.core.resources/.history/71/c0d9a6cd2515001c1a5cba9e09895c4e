@@ -1,0 +1,7 @@
+package com.Taazaa.Repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface Employee extends JpaRepository<T, ID> {
+
+}

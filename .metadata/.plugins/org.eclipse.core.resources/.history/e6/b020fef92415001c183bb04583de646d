@@ -1,0 +1,12 @@
+package com.Taazaa.model;
+
+public class Employee {
+
+	private Integer eid;
+	private String ename;
+	private String Email;
+	private String mobile;
+	private String address;
+
+}
+	

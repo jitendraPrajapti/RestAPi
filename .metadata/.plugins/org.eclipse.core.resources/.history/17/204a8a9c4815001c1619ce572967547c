@@ -1,0 +1,21 @@
+package com.Taazaa.Entity;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+public class DepartmentEntity {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY )
+	public Integer d_id;
+	@Column(name="PinCode")
+	public long PinCode;
+	@Column(name="City")
+	public String City;
+	@Column(name="state")
+	public String state;
+	
+
+}

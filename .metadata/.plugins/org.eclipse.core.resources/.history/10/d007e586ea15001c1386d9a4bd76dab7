@@ -1,0 +1,13 @@
+package com.Taazaa.Service;
+
+import com.Taazaa.model.Department;
+
+public class DepartmentServiceImpl implements DepartmentService {
+
+	@Override
+	public String save(Department dpt) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

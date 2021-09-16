@@ -1,0 +1,11 @@
+package com.Taazaa.Repo;
+
+import java.io.Serializable;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.Taazaa.model.Employee;
+
+public interface EmployeeRepo extends JpaRepository<Employee, Serializable> {
+
+}

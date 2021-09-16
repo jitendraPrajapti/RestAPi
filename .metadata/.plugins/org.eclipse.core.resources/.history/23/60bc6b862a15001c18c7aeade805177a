@@ -1,0 +1,47 @@
+package com.Taazaa.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.Taazaa.Repo.EmployeeRepo;
+import com.Taazaa.model.Employee;
+
+@Service
+public class EmployeeServiceImpl implements EmployeeService {
+
+	@Autowired
+	private EmployeeRepo empRepo;
+
+	@Override
+	public Integer Insert(Employee emp) {
+ Integer id=	empRepo.save(emp).getEid();
+
+		return id;
+	}
+
+	@Override
+	public Employee findOne(Integer eid) {
+		// TODO Auto-generated method stub
+		Optional<Employee> oemp=empRepo.findById(eid);
+		
+		Employee emp=oemp.orElseThrow(()-> new EmployeeNotFoundException("Employee not found"));
+		return emp;
+	}
+
+	@Override
+	public List<Employee> findAll() {
+		// TODO Auto-generated method stub
+		List<Employee> listEmp=empRepo.findAll();
+		return listEmp;
+	}
+
+	@Override
+	public void delete(Integer eid) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

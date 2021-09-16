@@ -1,0 +1,28 @@
+package com.Taazaa.Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.Taazaa.Repo.EmployeeRepo;
+import com.Taazaa.model.Employee;
+
+@Service
+public class EmployeeServiceImpl implements EmployeeService {
+
+	@Autowired
+	private EmployeeRepo empRepo;
+
+	@Override
+	public Integer Insert(Employee emp) {
+ Integer id=	empRepo.save(emp).getEid();
+
+		return null;
+	}
+
+	@Override
+	public Employee findOne(Integer eid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

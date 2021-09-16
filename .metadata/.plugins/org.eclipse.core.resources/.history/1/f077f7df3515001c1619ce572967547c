@@ -1,0 +1,60 @@
+package com.Taazaa.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.Taazaa.ExceptionHandler.EmployeeNotFound;
+import com.Taazaa.Repo.EmployeeRepo;
+import com.Taazaa.model.Employee;
+
+@Service
+public class EmployeeServiceImpl implements EmployeeService {
+
+	@Autowired
+	private EmployeeRepo empRepo;
+
+	@Override
+	public Integer Insert(Employee emp) {
+ Integer id=	empRepo.save(emp).getEid();
+
+		return id;
+	}
+
+	@Override
+	public Employee findOne(Integer eid) {
+		// TODO Auto-generated method stub
+		Optional<Employee> oemp=empRepo.findById(eid);
+		
+		Employee emp=oemp.orElseThrow(()-> new EmployeeNotFound("Employee not found"));
+		return emp;
+	}
+
+	@Override
+	public List<Employee> findAll() {
+		// TODO Auto-generated method stub
+		List<Employee> listEmp=empRepo.findAll();
+		return listEmp;
+	}
+
+	@Override
+	public void delete(Integer eid) {
+		// TODO Auto-generated method stub
+		
+		Employee edelete=findOne(eid);
+		empRepo.delete(edelete);
+		
+	}
+
+	@Override
+	public void Update(@RequestBody Employee emp, @PathVariable(name="Eid") long Eid) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

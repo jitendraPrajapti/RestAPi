@@ -1,0 +1,15 @@
+package com.Taazaa.model;
+
+import lombok.Data;
+
+@Data
+public class Department {
+
+	public Integer d_id;
+	public long PinCode;
+	public String City;
+	public String state;
+	
+	
+
+}

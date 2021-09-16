@@ -1,0 +1,9 @@
+package com.Taazaa.Service;
+
+import com.Taazaa.model.Employee;
+
+public interface EmployeeService {
+	
+	public String Insert(Employee emp);
+
+}

@@ -1,0 +1,14 @@
+package com.Taazaa.Entity;
+
+import javax.persistence.Column;
+
+public class DepartmentEntity {
+	@Column(name="city" )
+	private String City;
+	@Column(name="state" )
+	private String  state;
+	@Column(name="ZipCode" )
+	private String ZipCode;
+
+
+}

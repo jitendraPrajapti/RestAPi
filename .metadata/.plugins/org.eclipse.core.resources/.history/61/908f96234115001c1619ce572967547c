@@ -1,0 +1,11 @@
+package com.Taazaa.Entity;
+
+public class DepartmentEntity {
+	
+	public Integer d_id;
+	public long PinCode;
+	public String City;
+	public String state;
+	
+
+}

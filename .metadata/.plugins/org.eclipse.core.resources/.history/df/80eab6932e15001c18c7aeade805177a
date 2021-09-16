@@ -1,0 +1,42 @@
+package com.Taazaa.Controller;
+
+import java.util.List;
+
+import javax.websocket.server.PathParam;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.Taazaa.Service.EmployeeService;
+import com.Taazaa.model.Employee;
+
+@RestController
+public class EmployeeController {
+	
+	
+	@Autowired
+	private EmployeeService eService; 
+
+	@PostMapping("/save")
+	public ResponseEntity<String> saveEmp(@RequestBody Employee emp){
+		 Integer id=eService.Insert(emp);
+		 
+		
+		return  new ResponseEntity<String>("employee"+id+ "saved",HttpStatus.OK);
+	}
+	
+	@GetMapping("/one/{id}")
+	public ResponseEntity<Employee> findOneEmp(@PathVariable Integer id){
+		
+	Employee emp=	eService.findOne(id);
+		 return new  ResponseEntity<Employee>(emp,HttpStatus.OK);
+	}
+	
+	
+}

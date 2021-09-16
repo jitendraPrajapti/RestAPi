@@ -1,0 +1,19 @@
+package com.Taazaa.Service;
+
+import com.Taazaa.model.Employee;
+
+public class EmployeeServiceImpl implements EmployeeService {
+
+	@Override
+	public String Insert(Employee emp) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Employee findOne(Integer eid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

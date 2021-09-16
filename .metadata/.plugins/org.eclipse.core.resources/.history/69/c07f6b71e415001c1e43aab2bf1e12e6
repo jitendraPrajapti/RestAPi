@@ -1,0 +1,44 @@
+package com.Taazaa.Service;
+
+import java.util.List;
+
+import com.Taazaa.Entity.EmployeeEntity;
+import com.Taazaa.Repo.EmployeeRepo;
+
+public class EmployeeServiceimple implements EmployeeService {
+	
+	private EmployeeRepo emprepo;
+
+	@Override
+	public Integer Insert(EmployeeEntity emp) {
+		// TODO Auto-generated method stub
+	 Integer id=	emprepo.save(emp).getEid();
+		
+		return id;
+	}
+
+	@Override
+	public EmployeeEntity findOneEmp(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<EmployeeEntity> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delete(Integer eid) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void Update(EmployeeEntity emp) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

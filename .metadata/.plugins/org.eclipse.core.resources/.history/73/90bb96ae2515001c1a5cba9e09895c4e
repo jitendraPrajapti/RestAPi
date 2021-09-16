@@ -1,0 +1,5 @@
+package com.Taazaa.Repo;
+
+public interface EmployeeRepo {
+
+}

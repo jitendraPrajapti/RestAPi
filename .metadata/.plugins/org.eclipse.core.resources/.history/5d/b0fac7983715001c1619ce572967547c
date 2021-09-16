@@ -1,0 +1,20 @@
+package com.Taazaa.Service;
+
+import java.util.List;
+
+import com.Taazaa.model.Employee;
+
+public interface EmployeeService {
+
+	public Integer Insert(Employee emp);
+
+	public Employee findOne(Integer eid);
+
+	public List<Employee> findAll();
+
+	void delete(Integer eid);
+
+	void Update(Employee emp);
+
+	public Employee saveEmp(long eid);
+}

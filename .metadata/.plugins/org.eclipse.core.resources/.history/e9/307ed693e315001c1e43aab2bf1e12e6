@@ -1,0 +1,78 @@
+package com.Taazaa.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.Taazaa.Entity.EmployeeEntity;
+import com.Taazaa.ExceptionHandler.EmployeeNotFound;
+import com.Taazaa.Repo.EmployeeRepo;
+import com.Taazaa.model.Employee;
+
+@Service
+public class EmployeeServiceImpl implements EmployeeService {
+
+	@Autowired
+	private EmployeeRepo empRepo;
+
+	@Override
+	public Integer Insert(EmployeeEntity emp) {
+ Integer id=	empRepo.save(emp).getEid();
+
+		return id;
+	}
+
+	@Override
+	public EmployeeEntity findOne(Integer eid) {
+		// TODO Auto-generated method stub
+		Optional<EmployeeEntity> oemp=empRepo.findById(eid);
+		
+		EmployeeEntity emp=oemp.orElseThrow(()-> new EmployeeNotFound("Employee not found"));
+		return emp;
+	}
+
+	@Override
+	public List<EmployeeEntity> findAll() {
+		// TODO Auto-generated method stub
+		List<EmployeeEntity> listEmp=empRepo.findAll();
+		return listEmp;
+	}
+
+	@Override
+	public void delete(Integer eid) {
+		// TODO Auto-generated method stub
+		
+		EmployeeEntity edelete=findOne(eid);
+		empRepo.delete(edelete);
+		
+	}
+
+
+	@Override
+	public void Update(Employee emp) {
+		// TODO Auto-generated method stub
+		empRepo.save(emp);
+		
+	}
+
+	@Override
+	public EmployeeEntity findOne(Integer eid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void Update(EmployeeEntity emp) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+
+	
+
+	
+
+}

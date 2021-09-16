@@ -1,0 +1,21 @@
+package com.Taazaa.model;
+
+import lombok.Data;
+
+@Data
+public class Employee {
+
+	private Integer eid;
+	private String ename;
+	private String Email;
+	private String mobile;
+	private String address;
+	/*
+	 * @OneToMany(mappedBy="Department", cascade = CascadeType.ALL)
+	 * 
+	 * @JoinColumn(name="d_id") private Department department;
+	 */
+	
+
+}
+	

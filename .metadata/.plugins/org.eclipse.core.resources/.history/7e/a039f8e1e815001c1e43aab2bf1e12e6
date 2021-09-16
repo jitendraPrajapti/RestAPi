@@ -1,0 +1,7 @@
+package com.Taazaa.Service;
+
+public interface DepartmentService {
+	public string save(De)
+	
+
+}

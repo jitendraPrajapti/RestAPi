@@ -1,0 +1,15 @@
+package com.Taazaa.model;
+
+import lombok.Data;
+
+@Data
+public class Employee {
+
+	private Integer eid;
+	private String ename;
+	private String Email;
+	private String mobile;
+	private String address;
+
+}
+	

@@ -1,0 +1,19 @@
+package com.Taazaa.Controller;
+
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.Taazaa.Model.Employee;
+
+public class EmpController {
+
+	@GetMapping("/save")
+	public String loadForm(Model model) {
+		  Employee e=new Employee();
+		  model.addAttribute("employee", e);
+		
+		 return "index";
+	}
+	
+	
+}

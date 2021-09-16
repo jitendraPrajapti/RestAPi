@@ -1,0 +1,11 @@
+package com.Taazaa.Service;
+
+import com.Taazaa.model.Employee;
+
+public interface EmployeeService {
+
+	public Integer Insert(Employee emp);
+
+	public Employee findOne(Integer eid);
+
+}

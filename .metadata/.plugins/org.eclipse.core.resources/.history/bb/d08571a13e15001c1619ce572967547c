@@ -1,0 +1,28 @@
+package com.Taazaa.Entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.Data;
+@Data
+@Table
+@Entity
+public class EmployeeEntity {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer eid;
+	@Column(name = "ename")
+	private String ename;
+	@Column(name = "Email")
+	private String Email;
+	@Column(name = "mobile", length = 10)
+	private String mobile;
+	@Column(name = "address")
+	private String address;
+
+}
